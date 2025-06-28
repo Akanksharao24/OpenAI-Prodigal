@@ -63,7 +63,7 @@ amazon-archaeological-platform/
 
 ## Requirements
 
-* **Python**: Version 3.12
+* **Python**: Version 3.11
 * **Streamlit**: For building the platform's web interface
 * **Scikit-learn**: For machine learning models (RandomForest, SVM, etc.)
 * **GeoPandas**: For geospatial data processing (optional)
