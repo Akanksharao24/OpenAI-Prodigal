@@ -1,0 +1,17 @@
+streamlit==1.28.0
+pandas==2.1.4
+folium==0.14.0
+streamlit-folium==0.15.0
+requests==2.31.0
+numpy==1.26.4
+feedparser==6.0.11
+Pillow==10.3.0
+opencv-python==4.9.0.80
+openai==1.30.1
+plotly==5.22.0
+scikit-image==0.22.0
+scipy==1.13.0
+matplotlib==3.8.4
+seaborn==0.13.2
+geopy==2.4.1
+scikit-learn==1.4.2
