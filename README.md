@@ -97,7 +97,7 @@ pip install -r requirements.txt
 
 ## Running Your First Example
 
-1. **Example Script**: To test the platform, navigate to `src/amazon_archaeological_platform` and run the `example.py` script.
+1. ** Script**: To test the platform, navigate to `src/amazon_archaeological_platform` and run the `example.py` script.
 
 ```bash
 streamlit run Amazon_Archaeological_Research_Platform.py
