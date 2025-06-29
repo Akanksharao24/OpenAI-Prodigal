@@ -63,7 +63,7 @@ amazon-archaeological-platform/
 
 ## Requirements
 
-* **Python**: Version 3.12
+* **Python**: Version 3.11
 * **Streamlit**: For building the platform's web interface
 * **Scikit-learn**: For machine learning models (RandomForest, SVM, etc.)
 * **GeoPandas**: For geospatial data processing (optional)
@@ -97,7 +97,7 @@ pip install -r requirements.txt
 
 ## Running Your First Example
 
-1. **Example Script**: To test the platform, navigate to `src/amazon_archaeological_platform` and run the `example.py` script.
+1. ** Script**: To test the platform, navigate to `src/amazon_archaeological_platform` and run the `example.py` script.
 
 ```bash
 streamlit run Amazon_Archaeological_Research_Platform.py
