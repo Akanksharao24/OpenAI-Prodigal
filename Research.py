@@ -85,6 +85,7 @@ def setup_logging():
 
 logger = setup_logging()
 
+
 # Professional CSS styling
 def load_professional_css():
     st.markdown("""

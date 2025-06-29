@@ -19,6 +19,7 @@ The **Amazon Archaeological Discovery Platform** is designed to predict and anal
 7. [Methodology](#methodology)
 8. [Contributing](#contributing)
 9. [License](#license)
+10. [Google Earth Engine Authentication](#google-earth-engine-authentication)
 
 ---
 
@@ -50,8 +51,8 @@ The **Amazon Archaeological Discovery Platform** is designed to predict and anal
 
 ```
 amazon-archaeological-platform/
-├── Research_Platform.py  # Research dashboard
-├── Discovery_Platform    # Discovery dashboard
+├── Research.py  # Research dashboard
+├── Discovery.py   # Discovery dashboard
 ├── requirements.txt                            # Python dependencies
 ├── README.md                                   # Project overview and instructions
 └── LICENSE                                     # MIT License
@@ -74,7 +75,7 @@ amazon-archaeological-platform/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com//OpenAI-prodigal.git
+git clone https://github.com/OpenAI-prodigal.git
 cd OpenAI-prodigal
 ```
 
@@ -116,7 +117,6 @@ streamlit run Discovery.py
 1. **Data Collection**
 
    * The platform integrates data from:
-
      * Verified archaeological site records
      * Environmental and geospatial data (satellite imagery, soil types, river systems)
      * Indigenous territories and traditional earthworks
@@ -137,6 +137,64 @@ streamlit run Discovery.py
 5. **Site Clustering**
 
    * **DBSCAN** clustering groups nearby archaeological sites, identifying regions of historical significance.
+
+---
+
+## Google Earth Engine Authentication
+
+To use Earth Engine (GEE) in this platform, you must authenticate your account and set up the project ID for your platform's integration with GEE.
+
+### Steps to Authenticate GEE:
+
+1. **Create a Google Cloud Project and Enable Earth Engine:**
+
+   * Navigate to the [Google Cloud Console](https://console.cloud.google.com/).
+   * Create a new project, or select an existing project.
+   * Search for **Google Earth Engine API** in the **APIs & Services** section and enable it.
+   * Under the **IAM & Admin** section, ensure that you have the necessary permissions, especially `Viewer` or `Editor`.
+
+2. **Get Your Project ID:**
+
+   * Once your project is set up, navigate to the **Dashboard** of the Google Cloud Console.
+   * You'll find your **Project ID** in the top right corner under the **Project Info** section. This is the ID you'll use for authentication.
+
+3. **Authenticate Earth Engine:**
+
+   * First, install the Earth Engine Python package:
+
+     ```bash
+     pip install earthengine-api
+     ```
+
+   * Then, run the following command to authenticate your account:
+
+     ```bash
+     earthengine authenticate
+     ```
+
+   * This will prompt you to visit a URL, sign in with your Google account, and authorize Earth Engine.
+
+4. **Set the Project ID:**
+
+   * In your Python code (specifically in `Research_Platform.py` or `Discovery_Platform.py`), you need to authenticate and set the project ID. Add the following snippet to your code:
+
+     ```python
+     import ee
+     ee.Initialize(project='your-project-id-here')
+     ```
+
+   * Replace `your-project-id-here` with your actual Google Cloud project ID.
+
+5. **Verify Authentication:**
+
+   * After authenticating, verify the setup by running:
+
+     ```python
+     import ee
+     ee.Initialize()
+     ```
+
+   If successful, you will be able to use Earth Engine for processing satellite data within the platform.
 
 ---
 
