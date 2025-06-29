@@ -297,6 +297,12 @@ class APIKeyManager:
                 'requires_key': True,
                 'description': 'Satellite imagery and enhanced geocoding',
                 'default_available': False
+            },
+            "OpenAPI":{
+                'name':"Open API",
+                'requires_key':True,
+                'description': "Open API key for Data Collection",
+                'default_available': True
             }
         }
     
@@ -2071,6 +2077,12 @@ def create_professional_interactive_map_html(tribal_gdf: gpd.GeoDataFrame, sites
                     <div class="legend-item">
                         <div class="legend-color" style="background: linear-gradient(45deg, #3498db, #2ecc71);"></div>
                         <span class="legend-text">Clustered Locations</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-text">◈ Archaeological Site</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-text">◯ Indigenous Settlement</span>
                     </div>
                 `;
                 return div;
