@@ -1,10 +1,9 @@
-# Amazon Archaeological Discovery & Research Platform
+
+# Amazon Archaeological Discovery Platform
 
 ## Overview
 
-The **Amazon Archaeological Discovery Platform** provides a state-of-the-art suite for predicting and analyzing archaeological sites in the Amazon Basin, using advanced machine learning models, real archaeological data, and professional computer vision analysis.
-
-The platform integrates data from verified archaeological sites, indigenous group information, environmental factors, and satellite data. It features an advanced prediction model that leverages historical data to provide insights into archaeological locations and their significance.
+The **Amazon Archaeological Discovery Platform** is designed to predict and analyze archaeological sites within the Amazon Basin, integrating advanced machine learning models, satellite data, indigenous group information, and professional computer vision techniques. The platform uses real-world data to predict the locations of potential archaeological sites, providing a deeper understanding of ancient civilizations and their environmental interactions.
 
 ---
 
@@ -19,6 +18,7 @@ The platform integrates data from verified archaeological sites, indigenous grou
 7. [Methodology](#methodology)
 8. [Contributing](#contributing)
 9. [License](#license)
+10. [Google Earth Engine Authentication](#google-earth-engine-authentication)
 
 ---
 
@@ -26,25 +26,23 @@ The platform integrates data from verified archaeological sites, indigenous grou
 
 ### 1. **Archaeological Site Prediction**
 
-* Machine learning algorithms for predicting archaeological site locations based on real-world data
-* Uses historical site data, environmental factors, and indigenous data
+* Predict archaeological site locations using machine learning algorithms based on historical, environmental, and indigenous data.
 
 ### 2. **Satellite Data Integration**
 
-* Integrates NASA and ESA satellite data for site identification
-* Uses geospatial data for accurate site prediction
+* Incorporate satellite imagery from NASA and ESA to enhance the prediction of archaeological sites.
 
 ### 3. **AI-Powered Analysis**
 
-* Utilizes OpenAI GPT-4 for in-depth archaeological analysis and interpretation
+* Use OpenAI GPT-4 for generating detailed reports and analyses of archaeological findings.
 
 ### 4. **Geospatial Mapping**
 
-* Includes professional mapping tools like Folium and GeoPandas for visualizing and analyzing site locations
+* Visualize archaeological sites and their proximity to geographical features (rivers, elevation) using Folium and GeoPandas.
 
 ### 5. **Data Logging and Error Handling**
 
-* Advanced logging system to track data operations, API requests, and analysis success
+* Advanced logging system tracks operations, API requests, and analysis outcomes to ensure smooth processing.
 
 ---
 
@@ -52,8 +50,8 @@ The platform integrates data from verified archaeological sites, indigenous grou
 
 ```
 amazon-archaeological-platform/
-├── Amazon_Archaeological_Research_Platform.py  #Research Dashboard
-├── Amazon_Archaeological_Discovery_Platform    #Discover Dashboard
+├── Research.py  # Research dashboard
+├── Discovery.py   # Discovery dashboard
 ├── requirements.txt                            # Python dependencies
 ├── README.md                                   # Project overview and instructions
 └── LICENSE                                     # MIT License
@@ -63,11 +61,11 @@ amazon-archaeological-platform/
 
 ## Requirements
 
-* **Python**: Version 3.12
-* **Streamlit**: For building the platform's web interface
-* **Scikit-learn**: For machine learning models (RandomForest, SVM, etc.)
+* **Python**: Version 3.11
+* **Streamlit**: For building the web interface
+* **Scikit-learn**: For machine learning algorithms (RandomForest, SVM, etc.)
 * **GeoPandas**: For geospatial data processing (optional)
-* **Plotly**: For visualization of geospatial data and analysis
+* **Plotly**: For visualizing geospatial data and analyses
 
 ---
 
@@ -76,18 +74,18 @@ amazon-archaeological-platform/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Prodigal-AI/amazon-archaeological-platform.git
-cd amazon-archaeological-platform
+git clone https://github.com/OpenAI-prodigal.git
+cd OpenAI-prodigal
 ```
 
-2. Create and activate a Python 3.12 virtual environment:
+2. Create and activate a Python virtual environment:
 
 ```bash
 python3.12 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -97,51 +95,112 @@ pip install -r requirements.txt
 
 ## Running Your First Example
 
-1. **Example Script**: To test the platform, navigate to `src/amazon_archaeological_platform` and run the `example.py` script.
+1. **Run the Streamlit app:**
 
 ```bash
-streamlit run Amazon_Archaeological_Research_Platform.py
+streamlit run Research.py
 ```
+
 ```bash
-streamlit run Amazon_Archaeological_Discovery_Platform.py
+streamlit run Discovery.py
 ```
 
-2. The script will prompt you for your API keys and relevant credentials.
+2. The system will ask for API keys and credentials.
 
-3. The system will analyze the data and return site predictions and archaeological analysis.
+3. The platform will analyze the data and provide archaeological site predictions and insights.
 
 ---
 
 ## Methodology
 
-1. **Data Collection**: The platform integrates data from multiple sources:
+1. **Data Collection**
 
-   * Verified archaeological site records
-   * Environmental and geospatial data (satellite imagery, river systems, soil types)
-   * Indigenous groups' territories and their traditional earthwork practices
+   * The platform integrates data from:
 
-2. **Machine Learning Models**:
+     * Verified archaeological site records
+     * Environmental and geospatial data (satellite imagery, soil types, river systems)
+     * Indigenous territories and traditional earthworks
 
-   * **Feature Engineering**: Features such as latitude, longitude, elevation, rainfall, and structure count are used to train machine learning models like Random Forest and SVM.
-   * **Model Training**: Models are trained using historical site data, including confirmed archaeological locations and environmental data.
+2. **Machine Learning Models**
 
-3. **Geospatial Analysis**:
+   * **Feature Engineering**: Includes data like latitude, longitude, elevation, rainfall, and structure count.
+   * **Model Training**: Models are trained on historical site data to predict site locations.
 
-   * Using **GeoPandas** and **Folium**, the platform visualizes archaeological site locations and their proximity to environmental factors such as rivers and elevation.
+3. **Geospatial Analysis**
 
-4. **AI-Powered Insights**:
+   * Uses **GeoPandas** and **Folium** to visualize site locations in relation to geographical features.
 
-   * **OpenAI GPT-4** provides contextual analysis of the archaeological findings and generates detailed reports based on the machine learning predictions.
+4. **AI-Powered Insights**
 
-5. **Site Clustering**:
+   * **OpenAI GPT-4** provides in-depth analysis of predictions and generates detailed archaeological reports.
 
-   * Clustering algorithms like **DBSCAN** are used to group nearby archaeological sites, helping identify large regions with potential historical significance.
+5. **Site Clustering**
+
+   * **DBSCAN** clustering groups nearby archaeological sites, identifying regions of historical significance.
+
+---
+
+## Google Earth Engine Authentication
+
+To use Earth Engine (GEE) in this platform, you must authenticate your account and set up the project ID for your platform's integration with GEE.
+
+### Steps to Authenticate GEE:
+
+1. **Create a Google Cloud Project and Enable Earth Engine:**
+
+   * Navigate to the [Google Cloud Console](https://console.cloud.google.com/).
+   * Create a new project, or select an existing project.
+   * Search for **Google Earth Engine API** in the **APIs & Services** section and enable it.
+   * Under the **IAM & Admin** section, ensure that you have the necessary permissions, especially `Viewer` or `Editor`.
+
+2. **Get Your Project ID:**
+
+   * Once your project is set up, navigate to the **Dashboard** of the Google Cloud Console.
+   * You'll find your **Project ID** in the top right corner under the **Project Info** section. This is the ID you'll use for authentication.
+
+3. **Authenticate Earth Engine:**
+
+   * First, install the Earth Engine Python package:
+
+     ```bash
+     pip install earthengine-api
+     ```
+
+   * Then, run the following command to authenticate your account:
+
+     ```bash
+     earthengine authenticate
+     ```
+
+   * This will prompt you to visit a URL, sign in with your Google account, and authorize Earth Engine.
+
+4. **Set the Project ID:**
+
+   * In your Python code (specifically in `Research_Platform.py` or `Discovery_Platform.py`), you need to authenticate and set the project ID. Add the following snippet to your code:
+
+     ```python
+     import ee
+     ee.Initialize(project='your-project-id-here')
+     ```
+
+   * Replace `your-project-id-here` with your actual Google Cloud project ID.
+
+5. **Verify Authentication:**
+
+   * After authenticating, verify the setup by running:
+
+     ```python
+     import ee
+     ee.Initialize()
+     ```
+
+   If successful, you will be able to use Earth Engine for processing satellite data within the platform.
 
 ---
 
 ## Contributing
 
-We welcome contributions! Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to the platform.
+We welcome contributions! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to the platform.
 
 ---
 
