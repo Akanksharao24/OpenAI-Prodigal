@@ -1,4 +1,5 @@
 
+
 # Amazon Archaeological Discovery Platform
 
 ## Overview
@@ -116,7 +117,6 @@ streamlit run Discovery.py
 1. **Data Collection**
 
    * The platform integrates data from:
-
      * Verified archaeological site records
      * Environmental and geospatial data (satellite imagery, soil types, river systems)
      * Indigenous territories and traditional earthworks
@@ -209,4 +209,3 @@ We welcome contributions! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
 
 ---
-
